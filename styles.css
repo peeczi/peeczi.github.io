@@ -1,0 +1,28 @@
+h1 {
+    font-family: 'Trade Winds', cursive;
+    font-size: 54px;
+    margin: 0 1em;
+}
+
+h2 {
+    font-family: 'Akronim', cursive;
+    font-weight: normal;
+    font-size: 45px;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+p {
+    font-family: 'Crushed', cursive;
+    font-size: 36px;
+    text-align: center;
+}
+
+#headline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
