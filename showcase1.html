@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crushed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>No Budging with MY BUDGET</title>
+</head>
+<body>
+    <div id="budget-input">
+        <header id="show1-title">
+            <h1>No Budging with MY BUDGET!</h1>
+        </header>
+        <!-- <img src="assets/money.svg"> -->
+        <form class="budget-form">
+            <input type="text" name="budget-input" id="budget" placeholder="Budget">
+            <button type="button" id="budget-submit">Submit</button>
+        </form> 
+        <form>
+            <input type="text" id="expense-item" placeholder="Expense Item">
+            <input type="text" id="expense-amount" placeholder="Expense Amount">
+            <select name="expense-category" id="expense-category">
+                <option value="Home">Home</option>
+                <option value="Car">Car</option>
+                <option value="Medical">Medical</option>
+                <option value="School">School</option>
+                <option value="Work">Work</option>
+                <option value="Leisure">Leisure</option>
+                <option value="Other">Other</option>
+            </select>
+            <button type="button" id="expense-entry-button" value="Add">Add</button>
+        </form>
+    </div>
+    <div id="current-info">
+        <div id="budget-info"></div>
+        <div id="expense-total">$ExpenseTotal</div>
+        <div id="remainder">$Remainder</div>
+    </div>
+    <div id="expense-entry"></div>
+    <div id="page-links">
+        <a href="index.html">Look At What I Can Do</a>
+        <a href="showcase2.html">Airin' My Errands</a>
+        <a href="showcase3.html">No Thought for Food</a>
+    </div>
+    <script type="text/javascript" src="index.js"></script>
+</body>
+</html>

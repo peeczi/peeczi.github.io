@@ -1,7 +1,9 @@
-h1 {
+/* main page */
+#main-title {
     font-family: 'Trade Winds', cursive;
-    font-size: 54px;
-    margin: 0 1em;
+    font-size: 27px;
+    color: white;
+    text-shadow: 3px 3px 3px #3FBF41;
 }
 
 h2 {
@@ -15,14 +17,133 @@ header {
     justify-content: center;
 }
 
+a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    line-height: 1.4em;
+    color: white;
+    font-family: 'Crushed', cursive;
+    text-shadow: 1px 1px 2px #D4FF00;
+}
+
 p {
     font-family: 'Crushed', cursive;
     font-size: 36px;
     text-align: center;
 }
 
+#page-links {
+    margin-top: 0.5em;
+    background: linear-gradient(180deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 25%, rgba(0, 212, 255, 1) 100%);
+    border: 1px solid white;
+}
+
 #headline {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#intro-head {
+    margin: 0 1em;
+    flex-wrap: wrap;
+    background: linear-gradient( rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    border: 1px solid black;
+    border-radius: 6px 6px 0 0;
+    padding: 0.1em 2em;
+    box-shadow: 0 5px 9px #444;
+}
+
+#current-message {
+    display: flex;
+    justify-content: center;
+    font-family: 'Crushed', cursive;
+    padding: 1em 3em;
+}
+
+/* showcase1; no budging with my budget */
+
+img {
+    width: 9vw;
+    z-index: -1;
+}
+
+.budget-form {
+    display: inline-flex;
+    justify-content: center;
+}
+
+#budget-input {
+    font-family: 'Viaoda Libre', cursive;
+    font-weight: normal;
+    background-color: grey;
+    border: 1px solid black;
+    border-radius: 6px 6px 0 0;
+    text-align: center;
+    padding-top: 0.1em;
+    padding-bottom: 1em;
+    margin-top: 0;
+}
+
+#expense-input {
+    margin-top: 0.3em;
+}
+
+#current-info {
+    background-color: grey;
+    border: 1px solid black;
+    margin-top: 0.2em;
+    display: flex;
+    justify-content: space-evenly;
+    color: rgb(48, 47, 47);
+    font-family: 'Viaoda Libre', cursive;
+    font-weight: bold;
+}
+
+#expense-entry {
+    background-color: grey;
+    border: 1px solid black;
+    margin-top: 0.3em;
+    border-radius: 0 0 6px 6px;
+    color: rgb(48, 47, 47);
+    font-family: 'Viaoda Libre', cursive;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* showcase2; airin' my errands */
+#show2-title {
+    font-family: 'Sirin Stencil', cursive;
+    font-size: 36px;
+}
+
+.form-section-label {
+    text-decoration: underline;
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+#show2-head {
+    font-family: 'Unlock', cursive;
+    background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+    padding: 5px;
+    color: white;
+}
+
+input {
+    margin: 5px 5px;
+}
+
+/* showcase3; no thought for food */
+
+#show3-title {
+    font-family: 'Elsie Swash Caps', cursive;
+    font-size: 36px;
+}
+
+#show3-head {
+    background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+    padding: 5px;
+    color: white;
 }
