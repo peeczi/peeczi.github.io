@@ -1,0 +1,176 @@
+{
+    "tags": [
+        "tech",
+        "hardware",
+        "design",
+        "food",
+        "politics",
+        "business",
+        "finance",
+        "world"
+    ],
+    "energy": [
+        {
+            "id": 1,
+            "element": "Magnesium",
+            "benefits": ["Energy Creation: converting food into energy","Protein formation: creating new proteins from amino acids",
+            "Gene maintenance: helping create and repair DNA and RNA",
+            "Muscle movements: aiding in muscle contraction and relaxation",
+            "Nervous system regulation: regulating neurotransmitters, which send messages throughout your brain and nervous system",
+            "Supports healthy blood sugar levels",
+            "Promotes heart health",
+            "Boasts anti-inflammatory benefits",
+            "May help prevent migraine attacks",
+            "Promotes bone health",
+            "Supports better sleep",
+            "Helps reduce anxiety symptoms"],
+            "amount": "400mg",
+            "rate": "daily",
+            "source": [
+                "pumpkin seeds",
+                "chia seeds",
+                "spinach, boiled",
+                "almonds",                
+                "cashews",
+                "black beans",
+                "edamame",
+                "peanut butter",
+                "brown rice",
+                "salmon",
+                "avocado",
+                "dark chocolate",
+                "legumes",
+                "tuna",
+                "leafy greens"
+            ]
+        },
+        {
+            "id": 2,
+            "element": "Potassium",
+            "benefits": ["Regulates heartbeat",
+                "Ensures proper function of muscles and nerves",
+                "Synthesizes protein",
+                "Metabolizes carbohydrates",
+                "Promotes healthy blood pressure"],
+            "amount": "4700mg",
+            "rate": "daily",
+            "caution": "never take potassium supplements without a doctor's prescription, as this can easily cause high blood potassium levels that are dangerous",
+            "source": [
+                "avocado",
+                "acorn squash",
+                "spinach",
+                "salmon",
+                "apricots",
+                "grapefruit",
+                "broccoli",
+                "beans",
+                "bananaas",
+                "beetroot/ beet greens",
+                "leafy greens",
+                "tomatoes"
+            ]
+        },
+        {
+            "id": 3,
+            "element": "Zinc",
+            "benefits": ["Gene expression",
+                "Enzymatic reactions",
+                "Immune function",
+                "Protein synthesis",
+                "DNA synthesis",
+                "Wound healing",
+                "Growth and Development"],
+            "amount": "11mg",
+            "rate": "daily",
+            "caution": "Avoid high levels, be careful with supplements",
+            "source": [
+                "shellfish",
+                "meat",
+                "poultry",
+                "fish",
+                "legumes",
+                "nuts and seeds",
+                "dairy",
+                "eggs",
+                "whole grains",
+                "mushrooms",
+                "kale",
+                "peas",
+                "asparagus",
+                "beet greens"
+            ]
+        },
+        {
+            "id": 4,
+            "element": "Vitamin E",
+            "benefits": ["Improves health of blood, brain & skin",
+                "Promotes good vision and reproduction"
+            ],
+            "amount": "15mg",
+            "rate": "daily",
+            "source": [
+                "wheat germ oil",
+                "sunflower, safflower & soybean oil",
+                "sunflower seeds",
+                "almonds",
+                "peanuts, / butter",
+                "beet greens, collard greens & spinach",
+                "pumpkin",
+                "red bell pepper"
+            ]
+        },
+        {
+            "id": 5,
+            "element": "Iron",
+            "benefits": ["Helps preserve general energy and focus",
+                "Improves gastrointestinal processes, immune system and regulation of body temperature"
+                ],
+            "amount": "8mg",
+            "rate": "daily",
+            "caution": ["phytates in beans and grains, phosphates in carbonated beverages, tannins in coffee, tea, some wine & certain berries block or reduce iron absorption",
+                "calcium can slow both heme and non-heme iron absorption"],
+            "source": [
+                "canned clams",
+                "white beans",
+                "dark chocolate",
+                "oysters",
+                "cooked spinach",
+                "chickpeas",
+                "potato",
+                "cashews"
+            ]
+        }
+    ],
+    "easy":
+    {
+        "raw": [
+            {
+                "wrap": [
+                    ["cold cut", "cheese", "condiment", "lettuce wrap"],
+                    ["melon", "prosciutto", "balsamic glaze"],
+                    ["corn tortilla", "home-made pulled-pork patty", "coleslaw"],
+                    ["hot dog", "sauerkraut", "grilled pepper", "onion", "spicy mustard"],
+                    ["rice paper", "spinach or leafy greens", "julienned carrot", "julienned pickled radish/ jicama"]
+                ]
+            },
+            {
+                "stuffed": [
+                    ["mushroom", "cheese", "beef", "onion", "pepper"],
+                    ["pepper", "rice", "beef", "cheese"],
+                    ["zucchini", "suasage", "red onion", "cherry tomatoes", "parmesan cheese", "panko breadcrumbs", "parsley"]
+                ]
+            },
+            {
+                "sandwich": [
+                    ["flatbread", "pizza sauce", "pepperoni", "mozzarella cheese"],
+                    ["baguette", "bruschetta", "olive oil", "olives", "garlic"]
+                ]
+            },
+            {
+                "tapas": [
+                    ["fruit", "cheese", "cracker", "cured meat"]
+                ]
+            }
+        ]
+    }
+}

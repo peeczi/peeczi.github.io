@@ -1,0 +1,225 @@
+$numRows: 6;
+$row-width: 100/$numRows;
+
+#budget-body {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(3, 0.5fr) 10fr;
+    background: linear-gradient(90deg, rgb(4, 2, 107) 18%, rgb(26, 66, 125) 82%);
+    height: 100%;
+    /* font-family: "Viaoda Libre", cursive; */
+    font-family: 'Aboreto', cursive;
+}
+
+.project-head {
+    display: flex;
+    grid-row: 1;
+    grid-column: 2/ span 6;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-title,
+#input-form,
+#budget-input,
+#expense-item,
+#expense-amount {
+    color: white;
+    justify-content: center;
+}
+
+select option {
+    background: rgba(68, 72, 123, 0.7);
+}
+
+#expense-item {
+    width: 7rem;
+}
+
+#budget-input,
+#expense-amount {
+    width: 6.1rem;
+}
+
+#expense-entry-button {
+    font-family: 'Aboreto', cursive;
+}
+
+#expense-category,
+#expense-entry-button {
+    font-size: 1rem;
+}
+
+#budget-input,
+#expense-item,
+#expense-amount {
+    font-family: "Viaoda Libre", cursive;
+    font-size: 1.4rem;
+    margin: 0 1rem;
+    /* font-family: 'Aboreto', cursive; */
+    background-color: unset;
+    border-bottom: 0.2rem solid rgba(68, 72, 123, 1);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    padding: 0.1rem;
+}
+
+#budget-amount {
+    color: rgba(1, 162, 1, 1);
+
+}
+
+.budget-caption {
+    margin: 0;
+    text-align: center;
+    font-size: 1rem;
+    color: rgb(134, 134, 134);
+}
+
+#remainder {
+    color: rgb(230, 3, 3);
+}
+
+#budget-amount, .budget-caption, #expense-total, #remainder {
+    // background: radial-gradient(rgba(0, 25, 170, 0.2), rgba(35, 162, 39, 0.6) 60%, rgba(23, 80, 234, 0));
+    padding: 0 3rem;
+}
+
+
+#budget-input::placeholder,
+#expense-item::placeholder,
+#expense-amount::placeholder {
+    color: white;
+    font-family: 'Aboreto', cursive;
+    font-size: 1rem;
+}
+
+#input-form {
+    display: flex;
+    justify-content: space-evenly;
+    grid-row: 2;
+    grid-column: 2/ span 6;
+    margin: 0 0.5rem;
+}
+
+#current-info {
+    background: linear-gradient(to top, rgba(18, 82, 26, 0.6) 18%, rgba(35, 162, 39, 0.1) 62%, rgba(35, 162, 39, 0) 100%);
+    display: flex;
+    border-left: 1px solid rgb(189, 188, 188);
+    border-bottom: 4px double rgb(189, 188, 188);
+    border-right: 1px solid rgb(189, 188, 188);
+    grid-row: 3;
+    grid-column: 2/ span 6;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Viaoda Libre", cursive; 
+    font-weight: bold;
+    font-size: 3rem;
+    position: sticky;
+    top: 1rem;
+    height: 6rem;
+    z-index: 4;
+    padding-top: 0.7rem;
+    text-shadow: -2px -2px 9px black;
+}
+
+#expense-total, .expense-item {
+    color: rgba(0, 191, 255, 0.7);
+}
+
+.expense-entry {
+    display: flex;
+    border-left: 1px solid rgb(189, 188, 188);
+    border-top: 4px double rgb(189, 188, 188);
+    border-right: 1px solid rgb(189, 188, 188);
+    line-height: 1.4rem;
+    color: black;
+    background: linear-gradient(to bottom, rgba(18, 82, 26, 0.6) 18%, rgba(35, 162, 39, 0.1) 82%, rgba(35, 162, 39, 0) 100%);
+    grid-column: 1/ span 8;
+    margin: 0.5rem;
+}
+
+.expense-category-output {
+    line-height: 9rem;
+    opacity: 0.1;
+    font-size: 9rem;
+    padding: unset;
+    position: relative;
+    z-index: 1;
+}
+
+.expense-item {
+    font-weight: bolder;
+    justify-content: flex-end;
+    // line-height: 1.4rem;
+    color: white;
+    // margin: 0 1rem;
+    position: relative;
+}
+
+
+#expense-category {
+    margin: 0 0.6rem;
+    background-color: rgba(0, 191, 255, 0.4);
+    color: white;
+}
+
+.expenses-list {
+    position: relative;
+    z-index: 3;
+    display: grid;
+    grid-column: 1/ span 8;
+    justify-self: end;
+}
+
+.home-expense-item {
+    display: grid;
+    grid-row: 4;
+}
+
+.school-expense-item {
+    display: grid;
+    grid-row: 5;
+    grid-column: 5/ span 3;
+}
+
+.medical-expense-item {
+    display: grid;
+    grid-column: 5/ span 3;
+    grid-row: 6;
+}
+
+.work-expense-item {
+    display: grid;
+    grid-column: 5/ span 3;
+    grid-row: 7;
+}
+
+.car-expense-item {
+    display: grid;
+    grid-column: 5/ span 3;
+    grid-row: 8
+}
+
+.leisure-expense-item {
+    display: grid;
+    grid-column: 5/ span 3;
+    grid-row: 9;
+}
+
+.other-expense-item {
+    display: grid;
+    grid-column: 5/ span 3;
+    grid-row: 10;
+}
+
+#expense-entry-button {
+    background-color: rgba(89, 94, 159, 0.5);
+    border: 3px double white;
+    color: white;
+}
+
+#expense-category,
+#expense-entry-button {
+    border-radius: 3px;
+}

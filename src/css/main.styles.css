@@ -1,0 +1,27 @@
+.logos {
+  display: flex;
+  font-weight: bolder;
+  /* background: linear-gradient(30deg, rgba(102, 91, 227, 0.8) 52%, rgba(118, 107, 247, 0.8) 52%); */
+  width: 3rem;
+  height: 3rem;
+  margin: 1rem;
+  box-shadow: -3px -3px 12px #61C2A2;
+  font-family: "Unlock", cursive;
+  color: #7db08c;
+  text-shadow: 1px 3px 9px rgb(12, 44, 2);
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0.4rem;
+  left: 0.4rem;
+  opacity: 0.9;
+  z-index: 4;
+  text-align: center;
+  border-bottom: 4px solid rgb(0, 120, 240);
+  border-left: 2px solid rgb(0, 120, 240);
+  border-right: 2px solid rgb(0, 120, 240);
+  border-radius: 100%;
+  background: linear-gradient(#9ebd13 35%, #008552 80%);
+}
+
+/*# sourceMappingURL=main.styles.css.map */

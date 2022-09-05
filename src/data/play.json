@@ -1,0 +1,173 @@
+{
+    "tags": [
+        "tech",
+        "hardware",
+        "design",
+        "food",
+        "politics",
+        "business",
+        "finance",
+        "world"
+    ],
+    "posts": [
+        {
+            "id": 1,
+            "title": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
+            "excerpt": "Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+            "date": "1634439025000",
+            "image": "http://dummyimage.com/200x134.png/cc0000/ffffff",
+            "readingTimeMinutes": 9,
+            "tags": [
+                "crypto",
+                "health"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor.",
+            "excerpt": "Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique.",
+            "date": "1630299425000",
+            "image": "http://dummyimage.com/200x134.png/5fa2dd/ffffff",
+            "readingTimeMinutes": 12,
+            "tags": [
+                "food",
+                "health"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla.",
+            "excerpt": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet.",
+            "date": "1639894991000",
+            "image": "http://dummyimage.com/200x134.png/dddddd/000000",
+            "readingTimeMinutes": 13,
+            "tags": [
+                "finance",
+                "health"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.",
+            "excerpt": "Proin at turpis a pede posuere nonummy. Integer non velit.",
+            "date": "1642895680000",
+            "image": "http://dummyimage.com/200x134.png/5fa2dd/ffffff",
+            "readingTimeMinutes": 13,
+            "tags": [
+                "finance",
+                "food"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.",
+            "excerpt": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue.",
+            "date": "1641217936000",
+            "image": "http://dummyimage.com/200x134.png/cc0000/ffffff",
+            "readingTimeMinutes": 15,
+            "tags": [
+                "hardware",
+                "politics"
+            ]
+        },
+        {
+            "id": 6,
+            "title": "Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante.",
+            "excerpt": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam.",
+            "date": "1628775769000",
+            "image": "http://dummyimage.com/200x134.png/dddddd/000000",
+            "readingTimeMinutes": 10,
+            "tags": [
+                "business",
+                "politics"
+            ]
+        },
+        {
+            "id": 7,
+            "title": "In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat.",
+            "excerpt": "Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
+            "date": "1627910763000",
+            "image": "http://dummyimage.com/200x134.png/5fa2dd/ffffff",
+            "readingTimeMinutes": 13,
+            "tags": [
+                "hardware",
+                "finance"
+            ]
+        },
+        {
+            "id": 8,
+            "title": "Etiam pretium iaculis justo. In hac habitasse platea dictumst. Etiam faucibus cursus urna.",
+            "excerpt": "Nulla ut erat id mauris vulputate elementum. Nullam varius.",
+            "date": "1619332724000",
+            "image": "http://dummyimage.com/200x134.png/ff4444/ffffff",
+            "readingTimeMinutes": 9,
+            "tags": [
+                "business",
+                "design"
+            ]
+        },
+        {
+            "id": 9,
+            "title": "Proin at turpis a pede posuere nonummy. Integer non velit.",
+            "excerpt": "Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.",
+            "date": "1636715559000",
+            "image": "http://dummyimage.com/200x134.png/dddddd/000000",
+            "readingTimeMinutes": 12,
+            "tags": [
+                "finance",
+                "hardware"
+            ]
+        }
+    ],
+    "essentials": [
+        {
+            "toiletries": ["deoderant", "beard balm", "trimmer"],
+            "office": ["computer", "keyboard", "mouse", "short LED strip w/ remote"]
+        }
+    ],
+    "activities": [
+        {
+            "Network": "respond to tweets"
+        },
+        {
+            "Draw/ design icon/ logo or interactive element": "personalize home button"
+        },
+        {
+            "Animate": "hovering effect on links/ buttons"
+        },
+        {
+            "Job": "send resume to employers"
+        },
+        {
+            "Learn": "watch lectures"
+        },
+        {
+            "Deploy App": "upload app to showcase to friends"
+        },
+        {
+            "Coding Challenge": "compete/ complete coding challenges for experience/ recognition"
+        },
+        {
+            "Contribute to Open Source": "help others fix and build their apps"
+        },
+        {
+            "Increase wealth/ freedom": "grow income doing what you love"
+        }
+    ],
+    "growths": [
+        {
+            "Nutrition": {
+                "vitamins/ minerals": [
+                    "potassium", "vitamin E", "iron", "magnesium"
+                ]
+            }
+        },
+        {
+            "Learning": {
+                "coding": [
+                    "React", "MatLab", "OpenCV"
+                ]
+            }
+        }
+    ]
+}
