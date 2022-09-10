@@ -30,5 +30,10 @@
     
     // width: 4.5rem;
     // height: 4.5rem;
-    background: linear-gradient(#9ebd13 35%, #008552 80%);
+    background: radial-gradient(#9ebd13 20%, #008552 70%);
+    transition: transform 1s;
+}
+
+.logos:hover {
+    transform: scale(1.5);
 }

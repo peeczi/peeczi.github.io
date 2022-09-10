@@ -1,31 +1,24 @@
 import React from 'react';
-import Ibeam from '../../assets/i-cursor.svg';
-import HandPointer from '../../assets/hand-pointer.svg';
-import Main from '../../components/main.component';
-import '../../css/errands.styles.css';
-import { RemoveScroll } from 'react-remove-scroll';
+import Ibeam from '../assets/i-cursor.svg';
+import HandPointer from '../assets/hand-pointer.svg';
+import Main from '../components/main.component';
+import '../css/errands.styles.css';
 
 function Errands({ errands, errandCategory, errandDueDateInput, errandTaskInput, categoryChange, onErrandUpdate}) {
-  // scrollable, addScroll, removeScroll, 
+  
   return (
     <div className="errands">
       <Main />
       <h1 className="errands-title">Airin My Errands</h1>
-      {/* HOME */}
       <div className="inp">
         <span>
-          {/* onMouseOver={removeScroll} onMouseOut={addScroll} */}
         <form id="errand-input" onSubmit={onErrandUpdate}>
-          {/* {scrollable && */}
-          {/* <RemoveScroll> */}
             <h2 
               className="errand-category" 
               onWheel={categoryChange}
             >
               {errandCategory}
             </h2>
-          {/* </RemoveScroll> */}
-          {/* } */}
           <img
             className="type-symbol"
             alt="I beam icon"
@@ -37,7 +30,6 @@ function Errands({ errands, errandCategory, errandDueDateInput, errandTaskInput,
             placeholder="errand"
             id="errand-task"
             ref={errandTaskInput}
-            // value={ingredient}
           />
         
           <img
@@ -58,11 +50,9 @@ function Errands({ errands, errandCategory, errandDueDateInput, errandTaskInput,
 
     <div className="outp">
       <div id="errands-to-do">
-        {/* <ul> */}
           {Object.entries(errands[errandCategory]).map((errand, index) => {
           return <pre key={index}><p>{Object.keys(errand[1])} {'      '} {Object.values(errand[1])}</p></pre>
           })}
-        {/* </ul> */}
       </div>
     </div>
 

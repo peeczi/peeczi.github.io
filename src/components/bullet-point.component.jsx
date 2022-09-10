@@ -7,6 +7,7 @@ function BulletPoint() {
     <>
       <img
       src={bullet}
+      alt="bullet point"
       className="bullet-point"
       />
     </>

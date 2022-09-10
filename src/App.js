@@ -3,10 +3,10 @@ import Outlook from './assets/outlook.svg';
 import GitHub from './assets/github.svg';
 import LinkedIn from './assets/linkedin.svg';
 import { createContext, useState, useEffect, useRef } from 'react';
-import { Routes, Route, Link, Navigate } from 'react-router-dom';
-import Home from './routes/home/home';
-import Budget from './routes/budget/budget';
-import Errands from './routes/errands/errands';
+import { Routes, Route, Link } from 'react-router-dom';
+import Home from './routes/home';
+import Budget from './routes/budget';
+import Errands from './routes/errands';
 import Fuel from './routes/fuel/fuel';
 import sources from './data/fuel.json';
 import resume from './data/resume.json';
@@ -16,11 +16,11 @@ export const MealContext = createContext();
 function App() {
 
     // Introduction
-    const [showContent, setShowContent] = useState(false);
+    
     const intro = {
       type: "intro",
       title: "Hi,",
-      body: ["I'm Peter, lover of cats, art & computers.", "Exploring different ideas is where my attention gravitates toward. Discovering new paths to expand for greater good. Creating imaginative functions in fun form."]
+      body: ["I'm Peter, lover of cats, art & computers.", "Exploring different ideas is where my attention gravitates toward. Discovering new paths to expand for greater good. Creating imaginative functions in fun forms."]
     }
     const [contentType, setContentType] = useState(intro);
 
@@ -38,15 +38,13 @@ function App() {
       ]
     }
 
-// console.log(`contentType %c${Object.entries(contentType)}`, 'color:orange');
-
     const contactDetails = {
       type: "link",
       title: "Contact",
       body: [
-        <a className="link" href="http://www.outlook.com"><img className="contact-logo" alt="Outlook link" src={Outlook}/></a>,
-        <a className="link" href="https://www.linkedin.com/in/peter-czerniak-48030b83/"><img className="contact-logo" alt="LinkedIn link" src={LinkedIn}/></a>,
-        <a className="link" href="https://peeczi.github.io/"><img className="contact-logo" alt="GitHub" src={GitHub}/></a>
+        <a className="contact-link link" href="http://www.outlook.com"><img className="contact-logo" alt="Outlook link" src={Outlook}/></a>,
+        <a className="contact-link link" href="https://www.linkedin.com/in/peter-czerniak-48030b83/"><img className="contact-logo" alt="LinkedIn link" src={LinkedIn}/></a>,
+        <a className="contact-link link" href="https://peeczi.github.io/"><img className="contact-logo" alt="GitHub" src={GitHub}/></a>
       ]
     };
 
@@ -62,23 +60,17 @@ function App() {
 
     const changeContent = (event) => {
         const contentSelect = event.target.id;
-        console.log(`content selected: ${contentSelect}`);
-        setShowContent(true);
         switch(contentSelect) {
             case 'skills':
-                console.log("switch case: skills");
                 setContentType(codingSkills);
                 break;
             case 'projects':
-                console.log("switch case: projects");
                 setContentType(projects);
                 break;
             case 'resume':
-                console.log("switch case: resume");
                 setContentType(resume);
                 break;
             case 'contact':
-                console.log("switch case: contact");
                 setContentType(contactDetails);
                 break;
             default:
@@ -107,24 +99,25 @@ function App() {
       "other": [{"rope":99}]
     });
 
-    const [bills, setBills] = useState({
-      "tuition": {
-        "amount": 273.52,
-        "due date": 1
-      },
-      "phone": {
-        "amount": 97,
-        "due date": 21
-      },
-      "car insurance": {
-        "amount": 160,
-        "due date": 8
-      },
-      "visa": {
-        "amount": 60,
-        "due date": 15
-      }
-    })
+    // feature to add: bill payments
+    // const [bills, setBills] = useState({
+    //   "tuition": {
+    //     "amount": 273.52,
+    //     "due date": 1
+    //   },
+    //   "phone": {
+    //     "amount": 97,
+    //     "due date": 21
+    //   },
+    //   "car insurance": {
+    //     "amount": 160,
+    //     "due date": 8
+    //   },
+    //   "visa": {
+    //     "amount": 60,
+    //     "due date": 15
+    //   }
+    // })
 
     const budgetEnter = (event) => {
       event.preventDefault();
@@ -140,8 +133,6 @@ function App() {
       console.log(`budget: %c${budget}`, "color:orangered");
       setBudget("");
     }
-
-    const xpTotal = calculateExpenseTotal();
 
   // add expense entry
     const handleExpenseSubmit = (event) => {
@@ -166,23 +157,15 @@ function App() {
       let expenseTotal = 0;
       Object.entries(expense).map((expenseCategory) => {
         const expenseTotalCalc = Object.values(expenseCategory[1]).map((category) => {
-          // console.log(`%c category: ${Object.values(category)} `,"background-color:green; color:yellow");
           expenseTotal += Number(Object.values(category));
-          // console.log(`%c expenseTotal:${expenseTotal} `, "background-color:green; color:yellow");
           return expenseTotal;
         })
         return expenseTotalCalc[expenseTotalCalc.length-1];
       });
-      
-        const remainder = expenseTotal - budget;
-        // console.log(`expenseTotal: ${expenseTotal}  remainder: ${remainder}`);
         return expenseTotal;
     }
     
     const expenseTotal = calculateExpenseTotal();
-
-    // console.log(`calculateRemainder(): ${calculateRemainder()}`);
-    // console.log(`calculateExpenseTotal(): ${expenseTotal}`);
 
     // FUEL
     const [randoMeal, setRandoMeal] = useState();
@@ -197,40 +180,10 @@ function App() {
     // MEALDB RANDOM MEAL
   const randomMealUrl = "https://www.themealdb.com/api/json/v1/1/random.php";
 
-  const mealElements = {
-    str:
-    [
-  "Meal",
-  "Area",
-  "Category",
-  "Ingredient1 - n",
-  "Measure1 - n",
-  "Instructions",
-  "MealThumb",
-  "Source",
-  "Tags",
-  "Youtube"
-  ]
-  }
-  // meal elements
-  // str:
-  // Meal
-  // Area
-  // Category
-  // Ingredient1 - n
-  // Measure1 - n
-  // Instructions
-  // MealThumb
-  // Source
-  // Tags
-  // Youtube
-
-  const changeIngredientTarget = (event) => {
+    const changeIngredientTarget = (event) => {
     const ingredientTarget = event.target.value;
     if (event.key === 'Enter') {
       setIngredient(ingredientTarget);
-      console.log("ingredient entered");
-      console.log('ingredients changed to true');
       setLove("...NOMNOMNOMmmmMUAH");
     }
     
@@ -240,9 +193,6 @@ function App() {
     fetch(randomMealUrl)
     .then(response => response.json())
     .then(response => {
-      console.log(`Object.entries(response.meals): ${Object.entries(response.meals[0])}`);
-      console.log(response.meals[0]);
-      console.log(response.meals[0].strMeal);
       setRandoMeal(response.meals[0]);
       setRandom(true);
       setMinerals(false);
@@ -265,7 +215,7 @@ function App() {
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': 'fb77eca58bmsh09053d92aa715e9p1e1e37jsnc326434a9fd3',
+      'X-RapidAPI-Key': process.env.REACT_APP_SPOONACULAR_API_KEY,
       'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
     }
   };
@@ -274,7 +224,6 @@ function App() {
     fetch(`https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?ingredients=${ingredient}&number=5&ignorePantry=true&ranking=1`, options)
       .then(response => response.json())
       .then(response => {
-        console.log(`response: %c${response[0]}`, "color:yellow");
         setMeal(response);
         setMinerals(false);
         setRandom(false)
@@ -301,15 +250,6 @@ function App() {
   const errandDueDateInput = useRef();
   const [scrollCount, setScrollCount] = useState(0);
   const [errandCategory, setErrandCategory] = useState("home");
-  // const [scrollable, setScrollable] = useState(false);
-
-  // function removeScroll() {
-  //   setScrollable(false);
-  // }
-
-  // function addScroll() {
-  //   setScrollable(true);
-  // }
 
   function categoryChange(){
     if (scrollCount === 6) {
@@ -327,10 +267,6 @@ function App() {
     let errandTaskItem = errandTaskInput.current.value;
     let errandDueDate = errandDueDateInput.current.value;
 
-    console.log(`errandTaskItem: ${errandTaskItem}`);
-    console.log(`errandDueDate ${errandDueDate}`);
-    console.log(`errandCategory ${errandCategory}`)
-
     setErrands(prevErrands => ({ 
       ...prevErrands,
       [errandCategory]: [
@@ -346,10 +282,8 @@ function App() {
       <Route 
         path="/" 
         element={
-        <Home 
-          intro={intro}
-          onChange={changeContent} 
-          showContent={showContent}
+        <Home
+          onChange={changeContent}
           contentType={contentType}
           resume={resume}
         />}
@@ -360,7 +294,7 @@ function App() {
         <Budget 
           budget={budget}
           expense={expense}
-          bills={bills}
+          // bills={bills}
           expenseTotal={expenseTotal}
           expenseItemRef={expenseItemRef}
           expenseAmountRef={expenseAmountRef}
@@ -380,9 +314,6 @@ function App() {
           onErrandUpdate={onErrandUpdate}
           errandTaskInput={errandTaskInput}
           errandDueDateInput={errandDueDateInput}
-          // scrollable={scrollable}
-          // removeScroll={removeScroll}
-          // addScroll={addScroll}
           />} />
       <Route 
         path="fuel" 
@@ -391,7 +322,6 @@ function App() {
         <Fuel 
           meal={meal} 
           randoMeal={randoMeal} 
-          ingredient={ingredient} 
           changeIngredientTarget={changeIngredientTarget} 
           love={love} 
           fetchRandoMeal={fetchRandoMeal}

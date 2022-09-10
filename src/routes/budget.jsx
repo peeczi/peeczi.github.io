@@ -1,5 +1,5 @@
-import '../../css/budget.styles.css';
-import Main from '../../components/main.component';
+import '../css/budget.styles.css';
+import Main from '../components/main.component';
 import { useRef } from "react";
 
 function Budget({ budget, expense, bills, expenseItemRef, expenseAmountRef, expenseCategoryRef, budgetEnter, handleBudgetSubmit, handleExpenseSubmit, onExpenseChangeHandler, expenseTotal}) {
@@ -8,19 +8,6 @@ function Budget({ budget, expense, bills, expenseItemRef, expenseAmountRef, expe
         console.log(`expenses[0], expenses[1][0]: ${expenses[0]} ${Object.entries(expenses[1][0])}`);
         return Object.entries(expenses[1][0]);
     })
-
-    // const expensesRendered = renderExpenses();
-    // console.log(`expensesRendered: ${expensesRendered}`);
-    
-    // console.log(`%c Expenses entries: ${Object.entries(expense.school)} `,"background-color:green; color:yellow");
-    console.log(`expensesRendered: ${renderExpenses}`);
-    expense.home ? 
-    Object.entries(expense.home[0]).length === 0 ? 
-    console.log(`expense.home: ${expense.home[0].length}`) : 
-    console.log("expense.home = 0") :
-    console.log("expense.home does not exist");
-
-// July 14, 20, 21, 22, 25, 26, 27, 29
 
   return (
     <div id="budget-body">

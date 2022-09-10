@@ -5,7 +5,9 @@ function Main() {
   return (
     <>
         <Link  to="/">
-          <div className="logos"><h1>P</h1></div>
+          <div className="logos">
+            <h1>P</h1>
+          </div>
         </Link>
     </>
   )

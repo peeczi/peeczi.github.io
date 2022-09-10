@@ -2,11 +2,9 @@ import '../../css/fuel.styles.css';
 import Ibeam from '../../assets/i-cursor.svg';
 import HandPointer from '../../assets/hand-pointer.svg';
 
-function FuelIn({ fetchMinerals, ingredient, changeIngredientTarget, fetchRandoMeal }) {
+function FuelIn({ fetchMinerals, changeIngredientTarget, fetchRandoMeal }) {
   return (
     <div className="fuel-in">
-      {/* <div className="type-section"> */}
-      {/* <span> */}
         <img
           className="type-symbol"
           alt="type icon"
@@ -39,8 +37,6 @@ function FuelIn({ fetchMinerals, ingredient, changeIngredientTarget, fetchRandoM
         >
           minerals
         </button>
-      {/* </span> */}
-      {/* </div> */}
     </div>
   )
 }

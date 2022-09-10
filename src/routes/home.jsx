@@ -1,9 +1,8 @@
-import '../../css/home.styles.css';
+import '../css/home.styles.css';
 import React from 'react';
-import Resume from '../resume/resume.component';
-import { Outlet } from 'react-router-dom';
+import Resume from './resume';
 
-function Home({ onChange, showContent, contentType, resume, intro }) {
+function Home({ onChange, contentType, resume }) {
   return (
     <div id="cover">
         <div id="first-name">
@@ -27,7 +26,9 @@ function Home({ onChange, showContent, contentType, resume, intro }) {
                 <li>k</li>
             </ul>
         </div>
+        {/* profile picture */}
         <div id="profile-pic"></div>
+        {/* to display content selected from menu options */}
         <div id="content">
             <h2 className="title">{contentType.type === "resume" ? "Resume" : contentType.title}</h2>
             {
@@ -39,7 +40,7 @@ function Home({ onChange, showContent, contentType, resume, intro }) {
                     return <p key={index} id={`intro${index}`} className="intro">{content}</p>
                 })
                 :
-            contentType.type === "links" ?
+            contentType.type === "link" ?
                 contentType.body.map((content, index) => {
                     return <p key={index} id={`link${index}`}>{content}</p>
                 })

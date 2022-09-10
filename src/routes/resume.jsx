@@ -1,43 +1,21 @@
-import React, {useState, useEffect, Fragment} from 'react'
-import '../../css/resume.styles.css';
-import BulletPoint from '../../components/bullet-point.component';
+import React, {useState, useEffect} from 'react'
+import '../css/resume.styles.css';
+import BulletPoint from '../components/bullet-point.component';
 
 function Resume({resume}) {
-    const [workXP, setWorkXP] = useState();
-    useEffect(() => {
-        for (let element in resume.Work){
-            setWorkXP(resume.Work[element]);
-        }
-    }, [])
 
     const jobs = [];
     resume.Work.forEach((work) => {
         for (let element in work) {
-            console.log(`for loop; work %c${work[element]}`,'color:yellow');
-            if (Array.isArray(work[element])){
-                console.log(`work[element] is an array of; %c${Object.values(work[element])}`,'color:green');
+            if (Array.isArray(work[element])){                
                 work[element].forEach((duty) => {
-                    console.log(`duty: %c${duty}`,'color:pink');
-                    // jobs.push(duty);
                     jobs.push(`> ${duty}`);
                 })
-                // jobs.push(Object.values(work[element]));
             } else {
                 jobs.push(work[element]);
             }
         }
-        console.log(`resume.Work.forEach jobz: %c${Object.values(jobs)}`,'color:red');
-
     })
-
-    console.log(`jobsss: %c${workXP}`,'color:red');
-
-    function jobResponsibilities(job) {
-        for (let property of job) { 
-            console.log(`job[property] ${job[property]}`);
-            return job[property] ;
-        }
-    }
 
   return (
     <div id="resumee">
