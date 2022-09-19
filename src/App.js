@@ -20,7 +20,7 @@ function App() {
     const intro = {
       type: "intro",
       title: "Hi,",
-      body: ["I'm Peter, lover of cats, art & computers.", "Exploring different ideas is where my attention gravitates toward. Discovering new paths to expand for greater good. Creating imaginative functions in fun forms."]
+      body: ["I'm Peter, lover of cats, art & computers.", "Exploring different ideas is where my attention gravitates.", "Venturing through new territories of interactivity to enhance life for greater good.", "Creating imaginative functions in fun forms."]
     }
     const [contentType, setContentType] = useState(intro);
 
@@ -90,14 +90,24 @@ function App() {
     }, [budget])
 
     const [expense, setExpense] = useState({
-      "home": [{"bed":900},{"bed":900},{"bed":900},{"bed":900},{"bed":900}],
-      "school": [{"square":14}],
-      "medical": [{"band-aids":5}],
-      "work": [{"laptop":1200}],
-      "car": [{"engine oil":50}],
-      "leisure": [{"shoes":180}],
-      "other": [{"rope":99}]
-    });
+        "home": [{}],
+        "school": [{}],
+        "medical": [{}],
+        "work": [{}],
+        "car": [{}],
+        "leisure": [{}],
+        "other": [{}]
+      });
+
+    // const [expense, setExpense] = useState({
+    //   "home": [{"bed":900},{"bed":900},{"bed":900},{"bed":900},{"bed":900}],
+    //   "school": [{"square":14}],
+    //   "medical": [{"band-aids":5}],
+    //   "work": [{"laptop":1200}],
+    //   "car": [{"engine oil":50}],
+    //   "leisure": [{"shoes":180}],
+    //   "other": [{"rope":99}]
+    // });
 
     // feature to add: bill payments
     // const [bills, setBills] = useState({

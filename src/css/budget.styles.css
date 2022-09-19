@@ -1,6 +1,7 @@
 #budget-body {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  flex-wrap: wrap;
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 0.5fr) 10fr;
   background: linear-gradient(90deg, rgb(4, 2, 107) 18%, rgb(26, 66, 125) 82%);
   height: 100%;
@@ -11,7 +12,7 @@
 .project-head {
   display: flex;
   grid-row: 1;
-  grid-column: 2/span 6;
+  grid-column: 2/span 2;
   justify-content: center;
   align-items: center;
 }
@@ -22,7 +23,6 @@
 #expense-item,
 #expense-amount {
   color: white;
-  justify-content: center;
 }
 
 select option {
@@ -76,10 +76,6 @@ select option {
   color: rgb(230, 3, 3);
 }
 
-#budget-amount, .budget-caption, #expense-total, #remainder {
-  padding: 0 3rem;
-}
-
 #budget-input::placeholder,
 #expense-item::placeholder,
 #expense-amount::placeholder {
@@ -92,7 +88,7 @@ select option {
   display: flex;
   justify-content: space-evenly;
   grid-row: 2;
-  grid-column: 2/span 6;
+  grid-column: 1/span 4;
   margin: 0 0.5rem;
 }
 
@@ -103,8 +99,8 @@ select option {
   border-bottom: 4px double rgb(189, 188, 188);
   border-right: 1px solid rgb(189, 188, 188);
   grid-row: 3;
-  grid-column: 2/span 6;
-  justify-content: space-between;
+  grid-column: 1/span 4;
+  justify-content: space-evenly;
   align-items: center;
   font-family: "Viaoda Libre", cursive;
   font-weight: bold;
@@ -114,6 +110,7 @@ select option {
   height: 6rem;
   z-index: 4;
   padding-top: 0.7rem;
+  margin: 0 0.5rem;
   text-shadow: -2px -2px 9px black;
 }
 
@@ -129,7 +126,7 @@ select option {
   line-height: 1.4rem;
   color: black;
   background: linear-gradient(to bottom, rgba(18, 82, 26, 0.6) 18%, rgba(35, 162, 39, 0.1) 82%, rgba(35, 162, 39, 0) 100%);
-  grid-column: 1/span 8;
+  grid-column: 1/span 4;
   margin: 0.5rem;
 }
 
@@ -138,15 +135,14 @@ select option {
   opacity: 0.1;
   font-size: 9rem;
   padding: unset;
-  position: relative;
   z-index: 1;
 }
 
 .expense-item {
   font-weight: bolder;
-  justify-content: flex-end;
+  justify-content: start;
   color: white;
-  position: relative;
+  z-index: 2;
 }
 
 #expense-category {
@@ -159,8 +155,8 @@ select option {
   position: relative;
   z-index: 3;
   display: grid;
-  grid-column: 1/span 8;
-  justify-self: end;
+  grid-column: 1/span 4;
+  justify-content: center;
 }
 
 .home-expense-item {
@@ -171,36 +167,36 @@ select option {
 .school-expense-item {
   display: grid;
   grid-row: 5;
-  grid-column: 5/span 3;
+  grid-column: 3/span 2;
 }
 
 .medical-expense-item {
   display: grid;
-  grid-column: 5/span 3;
+  grid-column: 3/span 2;
   grid-row: 6;
 }
 
 .work-expense-item {
   display: grid;
-  grid-column: 5/span 3;
+  grid-column: 3/span 2;
   grid-row: 7;
 }
 
 .car-expense-item {
   display: grid;
-  grid-column: 5/span 3;
+  grid-column: 3/span 2;
   grid-row: 8;
 }
 
 .leisure-expense-item {
   display: grid;
-  grid-column: 5/span 3;
+  grid-column: 3/span 2;
   grid-row: 9;
 }
 
 .other-expense-item {
   display: grid;
-  grid-column: 5/span 3;
+  grid-column: 3/span 2;
   grid-row: 10;
 }
 

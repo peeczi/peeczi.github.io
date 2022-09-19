@@ -1,6 +1,5 @@
 import '../css/budget.styles.css';
 import Main from '../components/main.component';
-import { useRef } from "react";
 
 function Budget({ budget, expense, bills, expenseItemRef, expenseAmountRef, expenseCategoryRef, budgetEnter, handleBudgetSubmit, handleExpenseSubmit, onExpenseChangeHandler, expenseTotal}) {
     
@@ -54,8 +53,8 @@ function Budget({ budget, expense, bills, expenseItemRef, expenseAmountRef, expe
                 <button type="submit" id="expense-entry-button">- $</button>
             </form>
         </div>
-            <div id="current-info">
-                    {/* &#9730; */}
+        <div id="current-info">
+            {/* &#9730; */}
         {budget &&
         <>
             <span>
