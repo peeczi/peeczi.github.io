@@ -1,10 +1,6 @@
 .logos {
     display: flex;
     font-weight: bolder;
-    // border: 1px solid rgba(0, 168, 247, 0.8);
-    // border-radius: 2.5rem;
-    /* background: linear-gradient(30deg, rgba(102, 91, 227, 0.8) 52%, rgba(118, 107, 247, 0.8) 52%); */
-    // background: radial-gradient(rgba(210, 255, 187, 0.8) 20%, rgba(31, 116, 7, 0.8) 50%, rgba(22, 90, 4, 0.8) 75%);
     width: 3rem;
     height: 3rem;
     margin: 1rem;
@@ -14,22 +10,14 @@
     text-shadow: 1px 3px 9px rgb(12, 44, 2);
     justify-content: center;
     align-items: center;
-    position: fixed;
     top: 0.4rem;
     left: 0.4rem;
     opacity: 0.9;
-    // outline: groove 3px rgba(0, 168, 247, 0.8);
-    z-index: 4;
-
     text-align: center;
-    // background: radial-gradient(#CCE0D2 0%, #5e9b71 100%);
     border-bottom: 4px solid rgb(0, 120, 240);
     border-left: 2px solid rgb(0, 120, 240);
     border-right: 2px solid rgb(0, 120, 240);
     border-radius: 100%;
-    
-    // width: 4.5rem;
-    // height: 4.5rem;
     background: radial-gradient(#9ebd13 20%, #008552 70%);
     transition: transform 1s;
 }

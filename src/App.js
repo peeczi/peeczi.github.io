@@ -100,7 +100,7 @@ function App() {
       });
 
     // const [expense, setExpense] = useState({
-    //   "home": [{"bed":900},{"bed":900},{"bed":900},{"bed":900},{"bed":900}],
+    //   "home": [{"bed":800},{"table":500},{"chair":90},{"chair":90},{"chair":90}],
     //   "school": [{"square":14}],
     //   "medical": [{"band-aids":5}],
     //   "work": [{"laptop":1200}],
