@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import '../css/resume.styles.css';
 import BulletPoint from '../components/bullet-point.component';
 

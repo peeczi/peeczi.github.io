@@ -12,8 +12,9 @@
 .project-head {
   display: flex;
   grid-row: 1;
-  grid-column: 2/span 2;
+  grid-column: 1/span 4;
   justify-content: center;
+  text-align: center;
   align-items: center;
 }
 
@@ -108,7 +109,6 @@ select option {
   position: sticky;
   top: 1rem;
   height: 6rem;
-  z-index: 4;
   padding-top: 0.7rem;
   margin: 0 0.5rem;
   text-shadow: -2px -2px 9px black;

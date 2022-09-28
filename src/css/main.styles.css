@@ -1,7 +1,6 @@
 .logos {
   display: flex;
   font-weight: bolder;
-  /* background: linear-gradient(30deg, rgba(102, 91, 227, 0.8) 52%, rgba(118, 107, 247, 0.8) 52%); */
   width: 3rem;
   height: 3rem;
   margin: 1rem;
@@ -11,11 +10,9 @@
   text-shadow: 1px 3px 9px rgb(12, 44, 2);
   justify-content: center;
   align-items: center;
-  position: fixed;
   top: 0.4rem;
   left: 0.4rem;
   opacity: 0.9;
-  z-index: 4;
   text-align: center;
   border-bottom: 4px solid rgb(0, 120, 240);
   border-left: 2px solid rgb(0, 120, 240);

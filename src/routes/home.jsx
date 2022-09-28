@@ -37,12 +37,12 @@ function Home({ onChange, contentType, resume }) {
             : 
             contentType.type === "intro" ?
                 contentType.body.map((content, index) => {
-                    return <p key={index} id={`intro${index}`} className="intro">{content}</p>
+                    return <p key={index} id={`intro${index}`} className="intro-p">{content}</p>
                 })
                 :
             contentType.type === "link" ?
                 contentType.body.map((content, index) => {
-                    return <p key={index} id={`link${index}`}>{content}</p>
+                    return <p key={index} id={`link${index}`} className="link-item">{content}</p>
                 })
             :
             contentType.body.map((listItem, index) => {
