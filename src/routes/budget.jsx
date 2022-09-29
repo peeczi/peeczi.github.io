@@ -5,10 +5,8 @@ function Budget({ budget, expense, bills, expenseItemRef, expenseAmountRef, expe
 
   return (
     <div id="budget-body">
-        <div className="project-head">
             <Main />
-            <h2 className="project-title">No Budgin' With My Budget</h2>
-        </div>
+            <h1 className="project-title">No Budgin' With My Budget</h1>
         <div id="input-form">
             <form className="budget-form" name="budge-form" onSubmit={handleBudgetSubmit}>
                 <input 

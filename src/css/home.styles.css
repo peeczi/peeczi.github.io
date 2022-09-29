@@ -128,8 +128,13 @@
 }
 
 .link {
+  display: flex;
   text-shadow: -1px 2px 3px #61C2A2;
   transition: transform 1s;
+}
+
+.link {
+  padding: 0 0.5rem;
 }
 
 .link:hover {
@@ -145,6 +150,14 @@
   border-radius: 4px;
   box-shadow: 1px 1px 4px inset rgb(132, 254, 148);
   background: linear-gradient(25deg, rgba(87, 167, 98, 0.4) 25%, rgba(87, 167, 98, 0.1));
+}
+
+.contact-link {
+  display: flex;
+}
+
+#email-address:hover #email-address-tip {
+  visibility: visible;
 }
 
 @media screen and (max-width: 535px) {

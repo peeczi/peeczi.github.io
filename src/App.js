@@ -1,5 +1,6 @@
 import './css/App.css';
-import Outlook from './assets/outlook.svg';
+// import Outlook from './assets/outlook.svg';
+import Email from './assets/email.svg';
 import GitHub from './assets/github.svg';
 import LinkedIn from './assets/linkedin.svg';
 import { createContext, useState, useEffect, useRef } from 'react';
@@ -43,8 +44,9 @@ function App() {
       title: "Contact",
       body: [
         // <a className="contact-link link" href="http://www.outlook.com"><img className="contact-logo" alt="Outlook link" src={Outlook}/></a>,
-        <a className="contact-link link" href="https://www.linkedin.com/in/peter-czerniak-48030b83/"><img className="contact-logo" alt="LinkedIn link" src={LinkedIn}/></a>,
-        <a className="contact-link link" href="https://peeczi.github.io/"><img className="contact-logo" alt="GitHub" src={GitHub}/></a>
+        // <div id="email-address" className="contact-link"><img className="contact-logo" alt="email symbol" src={Email}/><span id="email-address-tip">peterpczerniak@outlook.com</span></div>,
+        <a className="contact-link" href="https://www.linkedin.com/in/peter-czerniak-48030b83/"><img className="contact-logo" alt="LinkedIn link" src={LinkedIn}/></a>,
+        <a className="contact-link" href="https://peeczi.github.io/"><img className="contact-logo" alt="GitHub" src={GitHub}/></a>
       ]
     };
 

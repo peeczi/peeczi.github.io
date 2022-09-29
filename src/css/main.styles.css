@@ -1,5 +1,4 @@
 .logos {
-  display: flex;
   font-weight: bolder;
   width: 3rem;
   height: 3rem;
@@ -7,8 +6,7 @@
   box-shadow: -3px -3px 12px #61C2A2;
   font-family: "Unlock", cursive;
   color: #7db08c;
-  text-shadow: 1px 3px 9px rgb(12, 44, 2);
-  justify-content: center;
+  text-shadow: 4px 4px 12px rgb(12, 44, 2), -3px -3px 12px rgb(12, 44, 2);
   align-items: center;
   top: 0.4rem;
   left: 0.4rem;
