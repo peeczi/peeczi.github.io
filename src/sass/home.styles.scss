@@ -1,26 +1,18 @@
 #cover {
     display: grid;
-    grid-template-columns: 1fr 10fr 1fr;
-    grid-template-rows: repeat(2, 1fr);
-    max-height: 100vh;
-    max-width: 100vw;
+    // grid-template-columns: 1fr 10fr 1fr;
+    // grid-template-rows: repeat(2, 1fr);
+    grid-template: repeat(2, auto) / auto auto auto;
+    gap: 3rem;
+    max-height: 100%;
+    min-width: 100%;
     background: linear-gradient(20deg, #050f13 18%, #1D617A 58%, #050f13 60%, #1D617A 60%, #050f13 95%);
     justify-content: center;
 }
 
-#first-name {
-    grid-row: 1;
-    align-self: start;
-}
-
-#last-name {
-    grid-row: 2;
-    align-self: end;
-}
-
 #first-name,
 #last-name {
-    display: grid;
+    display: flex;
     color: #7db08c;
     font-size: 2.7rem;
     // font-family: "Merriweather", serif;
@@ -29,6 +21,16 @@
     justify-self: end;
     opacity: 0.7;
     text-transform: uppercase;
+}
+
+#first-name {
+    grid-row: 1;
+    align-self: end;
+}
+
+#last-name {
+    grid-row: 2;
+    align-self: start;
 }
 
 #peter {
@@ -62,9 +64,6 @@
 .menu-item {
     text-align: center;
     font-family: "Oswald", sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background: radial-gradient(#CCE0D2 0%, #5e9b71 100%);
     border-bottom: 4px solid rgb(0, 120, 240);
     border-left: 2px solid rgb(0, 120, 240);
@@ -84,9 +83,10 @@
 }
 
 #menu {
-    display: grid;
-    grid-row: 1/ span 3;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    grid-row: 1/ span 2;
+    justify-content: space-evenly;
     align-items: center;
 }
 
@@ -106,15 +106,15 @@
     grid-row: 2;
     grid-column: 2;
     margin: 0;
-    padding: 0 0;
-    justify-self: center;
-    // align-content: space-evenly;
+    display: flex;
+    flex-direction: column;
     line-height: 1.8rem;
+    transition: width 2s 0.5s;
 }
 
 .content-item {
     margin: unset;
-    justify-self: center;
+    align-self: center;
 }
 
 #content::-webkit-scrollbar {
@@ -123,6 +123,7 @@
 
 .intro-p {
     font-size: 1.2rem;
+    align-self: center;
 }
 
 .intro:hover {
@@ -133,14 +134,15 @@
     display: flex;
     text-shadow: -1px 2px 3px #61C2A2;
     transition: transform 1s;
-}
-
-.link {
     padding: 0 0.5rem;
 }
 
 .link:hover {
     transform: scale(1.2);
+}
+
+.link-item {
+    align-self: center;
 }
 
 .contact-logo {

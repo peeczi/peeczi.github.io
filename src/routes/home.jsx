@@ -1,3 +1,4 @@
+// import ReactCSSTransitionGroup from 'react-transition-group';
 import '../css/home.styles.css';
 import React from 'react';
 import Resume from './resume';
@@ -29,6 +30,11 @@ function Home({ onChange, contentType, resume }) {
         {/* profile picture */}
         <div id="profile-pic"></div>
         {/* to display content selected from menu options */}
+        {/* <ReactCSSTransitionGroup
+        transitionName='expand'
+        transitionEnterTimeout={500}
+        transitionLeaveTimeout={300}
+        > */}
         <div id="content">
             <h2 className="title">{contentType.type === "resume" ? "Resume" : contentType.title}</h2>
             {
@@ -52,6 +58,7 @@ function Home({ onChange, contentType, resume }) {
             })
             }
         </div>
+        {/* </ReactCSSTransitionGroup> */}
         <div id="menu">
             <p id="skills" className="menu-item" onClick={onChange}>Skills</p>
             <p id="projects" className="menu-item" onClick={onChange}>Projects</p>
