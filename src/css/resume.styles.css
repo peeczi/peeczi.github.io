@@ -7,6 +7,10 @@
   font-size: 0.9rem;
 }
 
+.resume-name {
+  font-size: 1.4rem;
+}
+
 .resume-address, .resume-name {
   text-align: center;
 }

@@ -4,18 +4,18 @@ import BulletPoint from '../components/bullet-point.component';
 
 function Resume({resume}) {
 
-    const jobs = [];
-    resume.Work.forEach((work) => {
-        for (let element in work) {
-            if (Array.isArray(work[element])){                
-                work[element].forEach((duty) => {
-                    jobs.push(`> ${duty}`);
-                })
-            } else {
-                jobs.push(work[element]);
-            }
-        }
-    })
+  const jobs = [];
+  resume.Work.forEach((work) => {
+      for (let element in work) {
+          if (Array.isArray(work[element])){                
+              work[element].forEach((duty) => {
+                  jobs.push(duty);
+              })
+          } else {
+              jobs.push(work[element]);
+          }
+      }
+  })
 
   return (
     <div id="resumee">
@@ -33,12 +33,16 @@ function Resume({resume}) {
         </ul>
           <h3 className="resume-header">Work Experience</h3>
         {jobs.map((job, index) => {
-            if (index === 0) {
-                return <li key={index} style={{ fontStyle: "italic", textShadow: "2px -2px 3px black" }}>{job}</li>    
-            } else if (index === 5 || index === 10 || index === 18 || index === 25 || index === 29){
-                return <li key={index} style={{ fontStyle: "italic", textShadow: "1px -1px 3px black"}}><br></br>{job}</li>    
-            }
+          if (index === 0) {
+              return <li key={index} style={{ fontStyle: "italic", textShadow: "2px -2px 3px black" }}>{job}</li>    
+          } else if (index === 5 || index === 10 || index === 18 || index === 25 || index === 29){
+              return <li key={index} style={{ fontStyle: "italic", textShadow: "1px -1px 3px black"}}><br></br>{job}</li>    
+          } else if (index === 4 || index === 15 || index === 16 || index === 17 || index === 9 || index === 14 || index === 22 || index === 23 || index === 24 || index === 28  || index === 33  || index === 34  || index === 35  || index === 36  || index === 37) {
+            return <li key={index}><BulletPoint/>{job}</li>
+          }
+          else  {
             return <li key={index}>{job}</li>
+          }
         })}
           <h3 className="resume-header">Education</h3>
         {resume.education.map((ed, index) => {

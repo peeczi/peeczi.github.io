@@ -1,11 +1,29 @@
+:root {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  min-width: 100vw;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background: linear-gradient(20deg, #050f13 18%, #1D617A 58%, #050f13 60%, #1D617A 60%, #050f13 95%);
+}
+
 #cover {
   display: grid;
-  grid-template: repeat(2, auto)/auto auto auto;
+  grid-template: repeat(2, auto)/auto 360px auto;
   gap: 3rem;
-  max-height: 100%;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  height: 100%;
   min-width: 100%;
-  background: linear-gradient(20deg, #050f13 18%, #1D617A 58%, #050f13 60%, #1D617A 60%, #050f13 95%);
   justify-content: center;
+  box-sizing: border-box;
+}
+
+#cover:fullscreen {
+  height: 100vh;
 }
 
 #first-name,
@@ -93,8 +111,6 @@
 }
 
 #content {
-  height: 27rem;
-  max-width: 800px;
   overflow: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -105,8 +121,12 @@
   margin: 0;
   display: flex;
   flex-direction: column;
+  align-self: start;
+  justify-self: center;
   line-height: 1.8rem;
   transition: width 2s 0.5s;
+  text-align: center;
+  width: fit-content;
 }
 
 .content-item {
@@ -116,11 +136,6 @@
 
 #content::-webkit-scrollbar {
   display: none;
-}
-
-.intro-p {
-  font-size: 1.2rem;
-  align-self: center;
 }
 
 .intro:hover {

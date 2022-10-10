@@ -1,0 +1,19 @@
+.modal {
+  width: clamp(70%, 700px, 90%);
+  height: clamp(460px, 600px, 80%);
+  margin: auto;
+  padding: 0 2rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.modal::-webkit-scrollbar {
+  display: none;
+}
+
+/*# sourceMappingURL=modal.styles.css.map */

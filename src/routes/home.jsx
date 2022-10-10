@@ -2,8 +2,16 @@
 import '../css/home.styles.css';
 import React from 'react';
 import Resume from './resume';
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import Modal from "../components/modal.component";
 
 function Home({ onChange, contentType, resume }) {
+    const [modalOpen, setModalOpen] = useState(false);
+
+    const close = () => setModalOpen(false);
+    const open = () => setModalOpen(true);
+
   return (
     <div id="cover">
         <div id="first-name">
@@ -62,10 +70,30 @@ function Home({ onChange, contentType, resume }) {
         <div id="menu">
             <p id="skills" className="menu-item" onClick={onChange}>Skills</p>
             <p id="projects" className="menu-item" onClick={onChange}>Projects</p>
-            <p id="resume" className="menu-item" onClick={onChange}>Resume</p>
+            {/* <p id="resume" className="menu-item" onClick={onChange}>Resume</p> */}
+            <motion.button
+                whileHover={{scale: 1.1}}
+                whileTap={{scale: 0.9}}
+                className="menu-item"
+                onClick={() => (modalOpen ? close() : open())}
+            >
+                Resume
+            </motion.button>
             <p id="contact" className="menu-item" onClick={onChange}>Contact</p>
-        </div>
             
+            
+        </div>
+        <AnimatePresence
+            // disable any initial animations when the component is first rendered
+            initial={false}
+            // finish exit animation before entering component is rendered
+            //
+            exitBeforeEnter={true}
+            // fires when all exiting nodes have completed animating out
+            onExitComplete={() => null}
+        >
+            {modalOpen && <Modal modalOpen={modalOpen} handleClose={close} />}
+        </AnimatePresence>
     </div>
   )
 }
