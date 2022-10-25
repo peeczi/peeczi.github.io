@@ -43,10 +43,9 @@ function App() {
       type: "link",
       title: "Contact",
       body: [
-        // <a className="contact-link link" href="http://www.outlook.com"><img className="contact-logo" alt="Outlook link" src={Outlook}/></a>,
-        // <div id="email-address" className="contact-link"><img className="contact-logo" alt="email symbol" src={Email}/><span id="email-address-tip">peterpczerniak@outlook.com</span></div>,
-        <a className="contact-link" href="https://www.linkedin.com/in/peter-czerniak-48030b83/"><img className="contact-logo" alt="LinkedIn link" src={LinkedIn}/></a>,
-        <a className="contact-link" href="https://peeczi.github.io/"><img className="contact-logo" alt="GitHub" src={GitHub}/></a>
+        <a className="mailtoui" href="mailto:peterpczerniak@outlook.com" target="_blank" rel="noreferrer noopener"><img className="contact-logo" alt="email symbol" src={Email}/><span className="tooltip-text">peterpczerniak@outlook.com</span></a>,
+        <a className="contact-link" href="https://www.linkedin.com/in/peter-czerniak-48030b83/" target="_blank"><img className="contact-logo" alt="LinkedIn link" src={LinkedIn}/></a>,
+        <a className="contact-link" href="https://github.com/peeczi/peeczi.github.io" target="_blank"><img className="contact-logo" alt="GitHub" src={GitHub}/></a>
       ]
     };
 
@@ -54,15 +53,18 @@ function App() {
       type: "list",
       title: "Projects",
       body: [
-        <Link className="link" to="/fuel">Fuel Up On...</Link>,
-        <Link className="link" to="/errands">Airin' My Errands</Link>,
-        <Link className="link" to="/budget">No Budgin' with My Budget</Link>
+        <Link className="link-item" to="/fuel">Fuel Up On...</Link>,
+        <Link className="link-item" to="/errands">Airin' My Errands</Link>,
+        <Link className="link-item" to="/budget">No Budgin' with My Budget</Link>
       ]
     }
 
     const changeContent = (event) => {
         const contentSelect = event.target.id;
         switch(contentSelect) {
+          case 'profile-pic':
+                setContentType(intro);
+                break;
             case 'skills':
                 setContentType(codingSkills);
                 break;
@@ -82,34 +84,35 @@ function App() {
 
     // NO BUDGIN' WITH MY BUDGET
     const [budget, setBudget] = useState();
+    const [showBudgetInfo, setShowBudgetInfo] = useState(false);
+    const [showExpenseInfo, setShowExpenseInfo] = useState(false);
+    const [showAllCategories, setShowAllCategories] = useState(false);
+    const [showFocusCategory, setShowFocusCategory] = useState(false);
+    const [focusCategory, setFocusCategory] = useState();
     const expenseItemRef = useRef();
     const expenseAmountRef = useRef();
     const expenseCategoryRef = useRef();
-    useEffect(() => {
-      if (budget !== undefined) {
-        console.log(`budget amount: %c${budget}`, "color:green");
-      }
-    }, [budget])
-
-    const [expense, setExpense] = useState({
-        "home": [{}],
-        "school": [{}],
-        "medical": [{}],
-        "work": [{}],
-        "car": [{}],
-        "leisure": [{}],
-        "other": [{}]
-      });
 
     // const [expense, setExpense] = useState({
-    //   "home": [{"bed":800},{"table":500},{"chair":90},{"chair":90},{"chair":90}],
-    //   "school": [{"square":14}],
-    //   "medical": [{"band-aids":5}],
-    //   "work": [{"laptop":1200}],
-    //   "car": [{"engine oil":50}],
-    //   "leisure": [{"shoes":180}],
-    //   "other": [{"rope":99}]
-    // });
+    //     "home": [{"soap": 6}, {"floor mat": 7}, {"throw": 8}],
+    //     "school": [{"ruler": 5}, {"folders": 7}, {"eraser": 8}],
+    //     "medical": [{"syringe": 4}, {"band aids": 7}, {"gauze": 8}],
+    //     "work": [{"computer": 9}, {"calculator": 7}, {"binder": 8}],
+    //     "car": [{"engine oil": 19}, {"coolant": 27}, {"filter": 38}],
+    //     "leisure": [{"tennis racket": 200}, {"athletic shorts": 47}, {"shoes": 180}],
+    //     "other": [{"twine": 6}, {"container": 7}, {"magnet": 18}]
+    //   });
+
+    const [expense, setExpense] = useState({
+      "home": [{}],
+      "school": [{}],
+      "medical": [{}],
+      "work": [{}],
+      "car": [{}],
+      "leisure": [{}],
+      "other": [{}],
+      "test": [{}]
+    });
 
     // feature to add: bill payments
     // const [bills, setBills] = useState({
@@ -131,18 +134,38 @@ function App() {
     //   }
     // })
 
+    // set first category added to focusCategory
+
+    // useEffect(() => {
+      // Object.entries(expense).map((expenses, index) => (
+        // console.log(`%cEXPENSES: ${Object.entries(expenses)}`,'color:yellow') 
+        // console.log(`%cEXPENSES: ${Object.values(expenses[1])}`,'color:yellow') 
+        // calculateCategorySubtotal(expenses[1]) === undefined ? console.log('undefined muthafucka') : setFocusCategory(expenses[0])
+        
+        // calculateCategorySubtotal(expenses[1]) === undefined ? console.log('undefined muthafucka') : console.log(` expenses: ${expenses} subtotal: ${calculateCategorySubtotal(expenses[1])}`)
+        // console.log(calculateCategorySubtotal(expenses[1]))
+    //   ))
+    // },[])
+
+    
+
+    // function defaultExpenseView() {
+    //   Object.entries(expense).map((expenses, index) => (
+       
+    //   ))
+    // }
+
     const budgetEnter = (event) => {
       event.preventDefault();
         const budgetAmount = event.target.value;
-        
         if (event.key === "Enter" && budgetAmount > 0) {
           setBudget(budgetAmount);
+          setShowBudgetInfo(true);
         }
     }
 
     const handleBudgetSubmit = (event) => {
       event.preventDefault();
-      console.log(`budget: %c${budget}`, "color:orangered");
       setBudget("");
     }
 
@@ -155,16 +178,70 @@ function App() {
       let xpItem = expenseItemRef.current.value;
       let xpAmount = Number(expenseAmountRef.current.value);
 
-      // SET EXPENSE ACCORDING TO 
-      setExpense(prevExpense => ({
-        ...prevExpense,
-        [expenseCategory]:  [
-          ...prevExpense[expenseCategory],
-            {[xpItem]:xpAmount}
-          ]
-      }))
+
+      // if index 0 is blank, setExpense[0]
+      console.log(`inside handleExpenseSubmit; expense.${expenseCategory}[0]: %c${Object.entries(expense[expenseCategory][0])}`,'color:green');
+      console.log(`expense.${expenseCategory}[0]: %c${Object.entries(expense[expenseCategory][0])}`,'color:red');
+      
+      // if (Object.entries(expense[expenseCategory][0]).length === 0) {
+      //   console.log(`HIIIIII!!! expense.${expenseCategory}[0]: %c${Object.entries(expense[expenseCategory][0]).length}`,'color:red');
+      //   if (xpItem !== '' && xpAmount > 0){
+      //     setExpense(prevExpense => ({
+      //       ...prevExpense,
+      //       [expenseCategory]:
+      //       [{[xpItem]:xpAmount}]
+      //     }))
+      //   }
+      // }
+      console.log("%cSETEXPENSE COMPLETE",'color:orange');
+      if (xpItem !== '' && xpAmount > 0){
+        // SET EXPENSE ACCORDING TO
+        if (Object.entries(expense[expenseCategory][0]).length === 0) {
+          console.log(`HIIIIII!!! expense.${expenseCategory}[0]: %c${Object.entries(expense[expenseCategory][0]).length}`,'color:red');
+          
+            setExpense(prevExpense => ({
+              ...prevExpense,
+              [expenseCategory]:
+              [{[xpItem]:xpAmount}]
+            }))
+          
+        } else {
+          setExpense(prevExpense => ({
+          ...prevExpense,
+          [expenseCategory]:  [
+            ...prevExpense[expenseCategory],
+              {[xpItem]:xpAmount}
+            ]
+        }))}
+        setShowExpenseInfo(true);
+        
+        if (showAllCategories === false && showFocusCategory === false && focusCategory === undefined){
+          setShowFocusCategory(true);
+          setFocusCategory(expenseCategory);
+        }
+      }
     }
-    
+
+    function calculateCategorySubtotal(expenseCategory) {
+      console.log(`inside calculateCategorySubtotal(expenseCategory); Object.entries(expenseCategory[0]): %c${Object.entries(expenseCategory[0])}`,'color:yellow');
+      console.log(`inside calculateCategorySubtotal(expenseCategory); Object.entries(expenseCategory): %c${Object.entries(expenseCategory)}`,'color:yellow');
+
+      console.log(`inside calculateCategorySubtotal(expenseCategory); Object.entries(expenseCategory).length: %c${Object.entries(expenseCategory).length}`,'color:yellow');
+
+      console.log(`inside calculateCategorySubtotal(expenseCategory); Object.entries(expenseCategory): %c${Object.entries(expenseCategory)}`,'color:yellow');
+      if (Object.entries(expenseCategory[0]).length > 0){
+        let subtotal = 0;
+        Object.values(expenseCategory).map((expenseCategoryExpense) => {
+          subtotal += Number(Object.values(expenseCategoryExpense));
+          console.log(`subtotal: ${subtotal}`);
+          return subtotal;
+        })
+        return subtotal;
+      } 
+    }
+
+    // console.log(`calculateCategorySubtotal(expense.home) ${calculateCategorySubtotal(expense.home)}`);
+
     function calculateExpenseTotal() {
       let expenseTotal = 0;
       Object.entries(expense).map((expenseCategory) => {
@@ -178,6 +255,13 @@ function App() {
     }
     
     const expenseTotal = calculateExpenseTotal();
+
+    function expandCategoryExpenses(event) {
+      const expenseCategoryExpand = event.target.id;
+      setShowFocusCategory(prevState => !prevState);
+      setShowAllCategories(prevState => !prevState);
+      setFocusCategory(expenseCategoryExpand);
+    }
 
     // FUEL
     const [randoMeal, setRandoMeal] = useState();
@@ -312,6 +396,13 @@ function App() {
           expenseAmountRef={expenseAmountRef}
           expenseCategoryRef={expenseCategoryRef}
           budgetEnter={budgetEnter}
+          showBudgetInfo={showBudgetInfo}
+          showExpenseInfo={showExpenseInfo}
+          calculateCategorySubtotal={calculateCategorySubtotal}
+          expandCategoryExpenses={expandCategoryExpenses}
+          showAllCategories={showAllCategories}
+          showFocusCategory={showFocusCategory}
+          focusCategory={focusCategory}
           handleBudgetSubmit={handleBudgetSubmit}
           handleExpenseSubmit={handleExpenseSubmit}
         />}
@@ -326,7 +417,8 @@ function App() {
           onErrandUpdate={onErrandUpdate}
           errandTaskInput={errandTaskInput}
           errandDueDateInput={errandDueDateInput}
-          />} />
+          />} 
+      />
       <Route 
         path="fuel" 
         element={

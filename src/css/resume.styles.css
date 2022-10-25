@@ -18,6 +18,7 @@
 #resumee {
   padding: 0 2rem;
   font-family: "Noticia Text", serif;
+  scroll-behavior: smooth;
 }
 
 .bullet-point {

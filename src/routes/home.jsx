@@ -3,6 +3,7 @@ import '../css/home.styles.css';
 import React from 'react';
 import Resume from './resume';
 import { motion, AnimatePresence } from "framer-motion";
+import Transition from 'react-transition-group';
 import { useState } from "react";
 import Modal from "../components/modal.component";
 
@@ -36,7 +37,7 @@ function Home({ onChange, contentType, resume }) {
             </ul>
         </div>
         {/* profile picture */}
-        <div id="profile-pic"></div>
+        <div id="profile-pic" onClick={onChange}></div>
         {/* to display content selected from menu options */}
         {/* <ReactCSSTransitionGroup
         transitionName='expand'
@@ -70,18 +71,16 @@ function Home({ onChange, contentType, resume }) {
         <div id="menu">
             <p id="skills" className="menu-item" onClick={onChange}>Skills</p>
             <p id="projects" className="menu-item" onClick={onChange}>Projects</p>
-            {/* <p id="resume" className="menu-item" onClick={onChange}>Resume</p> */}
-            <motion.button
-                whileHover={{scale: 1.1}}
-                whileTap={{scale: 0.9}}
+            <p id="resume" className="menu-item" onClick={() => (modalOpen ? close() : open())}>Resume</p>
+            {/* <motion.button
+                whileHover={{scale: 1.2}}
+                whileTap={{scale: 0.8}}
                 className="menu-item"
                 onClick={() => (modalOpen ? close() : open())}
             >
                 Resume
-            </motion.button>
+            </motion.button> */}
             <p id="contact" className="menu-item" onClick={onChange}>Contact</p>
-            
-            
         </div>
         <AnimatePresence
             // disable any initial animations when the component is first rendered

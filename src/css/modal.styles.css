@@ -1,15 +1,17 @@
 .modal {
   width: clamp(70%, 700px, 90%);
-  height: clamp(460px, 600px, 80%);
+  height: clamp(460px, 90%, 900px);
   margin: auto;
   padding: 0 2rem;
-  border-radius: 12px;
+  border-radius: 6px;
   display: flex;
   flex-direction: column;
   color: white;
   overflow: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  border: dotted 2px rgb(180, 249, 180);
+  background: rgba(0, 0, 0, 0.9);
 }
 
 .modal::-webkit-scrollbar {

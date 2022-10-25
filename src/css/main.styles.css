@@ -1,4 +1,7 @@
 .logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: bolder;
   width: 3rem;
   height: 3rem;
@@ -7,21 +10,23 @@
   font-family: "Unlock", cursive;
   color: #7db08c;
   text-shadow: 4px 4px 12px rgb(12, 44, 2), -3px -3px 12px rgb(12, 44, 2);
-  align-items: center;
+  position: absolute;
   top: 0.4rem;
   left: 0.4rem;
   opacity: 0.9;
-  text-align: center;
   border-bottom: 4px solid rgb(0, 120, 240);
   border-left: 2px solid rgb(0, 120, 240);
   border-right: 2px solid rgb(0, 120, 240);
   border-radius: 100%;
   background: radial-gradient(#9ebd13 20%, #008552 70%);
-  transition: transform 1s;
+  transition: all 1s ease-out;
+  opacity: 0.7;
 }
 
 .logos:hover {
-  transform: scale(1.5);
+  scale: 1.2;
+  color: #59b876;
+  opacity: 1;
 }
 
 /*# sourceMappingURL=main.styles.css.map */
