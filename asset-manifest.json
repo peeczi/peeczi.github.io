@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.dfa86336.css",
+    "main.js": "/static/js/main.c4e9e3a5.js",
+    "static/js/787.dee4f6c0.chunk.js": "/static/js/787.dee4f6c0.chunk.js",
+    "static/media/p - 360.jpg": "/static/media/p - 360.004fe2607d81afb99487.jpg",
+    "static/media/p - 270.jpg": "/static/media/p - 270.c2f028334156728a5f9b.jpg",
+    "static/media/greytrixyz.svg": "/static/media/greytrixyz.f1b3a55fc5abaa2a65632978a176939a.svg",
+    "static/media/github.svg": "/static/media/github.7894bcfab1ab247b6ad725fd8f5223ac.svg",
+    "static/media/linkedin.svg": "/static/media/linkedin.e17af6c85464c8ff13c1de27ffbdef64.svg",
+    "index.html": "/index.html",
+    "static/media/hand-pointer.svg": "/static/media/hand-pointer.4442a981ca3f10b37b500d388eb28cca.svg",
+    "static/media/outlook.svg": "/static/media/outlook.efd09c72aebfa16a6a4dc7bf3f63c430.svg",
+    "static/media/i-cursor.svg": "/static/media/i-cursor.ffe5ea37bf097486953a7be625c5f6be.svg",
+    "main.dfa86336.css.map": "/static/css/main.dfa86336.css.map",
+    "main.c4e9e3a5.js.map": "/static/js/main.c4e9e3a5.js.map",
+    "787.dee4f6c0.chunk.js.map": "/static/js/787.dee4f6c0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dfa86336.css",
+    "static/js/main.c4e9e3a5.js"
+  ]
+}
