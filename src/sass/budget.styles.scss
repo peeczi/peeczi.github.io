@@ -17,10 +17,10 @@ $row-width: 100/$numRows;
     justify-content: center;
     align-self: center;
     font-family: 'Alkalami', serif;
-    font-size: 4vw;
+    height: 5vh;
     text-transform: uppercase;
     margin: unset;
-    padding-top: 5vh;
+    padding-top: 2vh;
     background: -webkit-linear-gradient(rgba(26, 119, 39, 0.5), rgba(55, 245, 80, 0.5));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -133,7 +133,6 @@ select option {
     font-size: 3vw;
     text-shadow: -2px 2px 5px black;
     opacity: 1;
-    // transition: opacity 1s ease-out;
 }
 
 #expense-total, .expense-item {
@@ -149,7 +148,7 @@ select option {
     border-bottom: 4px double rgba(18, 82, 26, 0.6);
     border-radius: 12px;
     width: 95%;
-    height: 70vh;
+    height: 65vh;
     line-height: 9vh;
     background: radial-gradient(rgba(35, 162, 39, 0) 18%, rgba(35, 162, 39, 0.1) 63%,  rgba(55, 245, 80, 0.5) 100%);
     align-items: center;
@@ -158,12 +157,20 @@ select option {
     padding: 1vh 0;
 }
 
-#expense-content {
+.current-variable-info {
+    animation: openVariableSummary 2s ease-out forwards;
+}
+
+.expense-category-output, 
+.expense-category-output-total, 
+.expense-category-item, 
+.expense-category-list, 
+.expense-list {
     animation: openCategorySummary 2s ease-out forwards;
 }
 
-.current-variable-info {
-    animation: openVariableSummary 2s ease-out forwards;
+#expense-content {
+    animation: openOverview 2s ease-out;
 }
 
 @keyframes openVariableSummary {
@@ -187,12 +194,24 @@ select option {
         transform: translateY(100%);
     }
     50% {
-        opacity: 1;
+        opacity: 0.5;
         transform: translateY(-20%);
     }
     100% {
         opacity: 1;
         transform: translateY(0%);
+    }
+}
+
+@keyframes openOverview {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
     }
 }
 
@@ -215,7 +234,7 @@ select option {
     justify-content: center;
     padding: 9px;
     margin: unset;
-    font-size: 7vw;
+    font-size: 7vmin;
     background: -webkit-linear-gradient(rgba(26, 119, 39, 0.5), rgba(55, 245, 80, 0.5));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -230,7 +249,7 @@ select option {
 .expense-category-item {
     display: flex;
     justify-content: space-between;
-    font-size: 3vw;
+    font-size: 4vh;
     font-family: 'Almendra', serif;
     background: -webkit-linear-gradient(rgba(26, 119, 39, 0.5), rgba(55, 245, 80, 0.5));
     -webkit-background-clip: text;
@@ -251,3 +270,9 @@ select option {
 #expense-list::-webkit-scrollbar {
     display: none;
 }
+
+
+
+// .expense-category-list, .expense-list {
+//     animation: openExpenseItem 2s ease-out forwards;
+// }

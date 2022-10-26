@@ -38,7 +38,6 @@ function Budget({
                 />
             </form> 
             <form onSubmit={handleExpenseSubmit}>
-                {/* <p>EXPENSE</p> */}
                 <input 
                     type="text" 
                     id="expense-item-input-field" 
@@ -68,6 +67,7 @@ function Budget({
                 <button type="submit" id="expense-entry-button">- $</button>
             </form>
         </div>
+
         {/* display budget amount */}
         <Transition in={showBudgetInfo} timeout={1000} mountOnEnter unmountOnExit>
             {/* {state => console.log(`state: ${state}`)}; */}
@@ -88,6 +88,7 @@ function Budget({
                 </div>
             )}
         </Transition>
+
         {/* display expense total */}
         <Transition in={showExpenseInfo} timeout={3000} mountOnEnter unmountOnExit>
             {state => (
@@ -106,6 +107,7 @@ function Budget({
                 </div>
             )}
         </Transition>
+
         {/* display remainder from budget - expense total */}
         <Transition in={showBudgetInfo && showExpenseInfo} timeout={1000} mountOnEnter unmountOnExit>
             {state => (
@@ -125,8 +127,8 @@ function Budget({
                 </div>
             )}
         </Transition>
+
         {/* show expense sub totals amongst all categories */}
-        
         <Transition in={showExpenseInfo} timeout={1000} mountOnEnter unmountOnExit>
             <div id="expense-content">
                 {/* display all categories and their respective totals */}
@@ -155,7 +157,7 @@ function Budget({
                     <p className="expense-category-output" onClick={expandCategoryExpenses}>{focusCategory}</p>
                     {expense[focusCategory].map((expenseFocusItem, index) => {
                         if (Object.entries(expenseFocusItem).length > 0){
-                            return <div  className="expense-category-item" key={index}>
+                            return <div key={index}  className="expense-category-item">
                                     <p>{Object.keys(expenseFocusItem)}</p>
                                     <p>${Object.values(expenseFocusItem)}</p>
                                 </div>
