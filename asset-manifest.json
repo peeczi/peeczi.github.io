@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.df3773c9.css",
-    "main.js": "/static/js/main.afd4ed19.js",
+    "main.css": "/static/css/main.0cd22dbf.css",
+    "main.js": "/static/js/main.fd76b363.js",
     "static/js/592.a1082762.chunk.js": "/static/js/592.a1082762.chunk.js",
     "static/media/mealPlans.jpg": "/static/media/mealPlans.8397c9b256146a902c63.jpg",
     "static/media/art-background.JPG": "/static/media/art-background.953ed3875368bdba1bfb.JPG",
@@ -25,6 +25,7 @@
     "static/media/profileo.jpg": "/static/media/profileo.26a130a666b5fb9c3800.jpg",
     "static/media/art3.png": "/static/media/art3.bfc7f36915e7affe2bee.png",
     "static/media/greytrixyz.svg": "/static/media/greytrixyz.f1b3a55fc5abaa2a65632978a176939a.svg",
+    "static/media/checked-clipboard.png": "/static/media/checked-clipboard.24709259899fc64c56c2.png",
     "static/media/github.svg": "/static/media/github.7894bcfab1ab247b6ad725fd8f5223ac.svg",
     "index.html": "/index.html",
     "static/media/calculator.svg": "/static/media/calculator.8096c118e3ac4f34719fae55acc9bb09.svg",
@@ -37,12 +38,12 @@
     "static/media/scroll-up-down.svg": "/static/media/scroll-up-down.67b5e5f16b09f588d6b1ffa7bded77f1.svg",
     "static/media/ban-circle.svg": "/static/media/ban-circle.0c5662fad9d57d4815d7f80150d3a98f.svg",
     "static/media/add.svg": "/static/media/add.cda670abec7fd4c444acf54d1438314d.svg",
-    "main.df3773c9.css.map": "/static/css/main.df3773c9.css.map",
-    "main.afd4ed19.js.map": "/static/js/main.afd4ed19.js.map",
+    "main.0cd22dbf.css.map": "/static/css/main.0cd22dbf.css.map",
+    "main.fd76b363.js.map": "/static/js/main.fd76b363.js.map",
     "592.a1082762.chunk.js.map": "/static/js/592.a1082762.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.df3773c9.css",
-    "static/js/main.afd4ed19.js"
+    "static/css/main.0cd22dbf.css",
+    "static/js/main.fd76b363.js"
   ]
 }
